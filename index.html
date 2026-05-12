@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz aniversário meu amorzinho</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="overlay-entrada">
+    <div class="card-entrada">
+        <h1>Para Alaninha... 💜</h1>
+        <button id="btn-entrar">Abrir com carinho</button>
+    </div>
+</div>
+
+    <!-- Header / Sidebar Superior -->
+    <header class="sidebar-topo">
+        <p>Pra uma pessoa muito importante e especial 💜</p>
+    </header>
+
+    <audio id="musicaFundo" loop>
+    <source src="audio/sweater weather.m4a" type="audio/mp4">
+</audio>
+
+   <div id="video-overlay" class="video-hide">
+        <button id="close-video">X</button>
+        <iframe 
+            id="meuVideo" 
+            src="https://www.youtube.com/embed/LG86U5mvUxM?enablejsapi=1&rel=0" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+   <div class="container-principal">
+    <aside class="sidebar side-left">
+        <div class="glass-wrapper">
+            <img src="img/kuromi superior esquerda.gif" alt="Kuromi 1">
+        </div>
+        <div class="glass-wrapper">
+            <img src="img/kuromi inferior esquerda.gif" alt="Kuromi 2">
+        </div>
+    </aside>
+
+    <main class="conteudo-central">
+        <div class="card-kuromi">
+            <h1>Um data MUITO MUITO ESPECIAL🎂🍰</h1>
+            <div class="texto-container">
+                <p>Feliz aniversario meu amorzinho, esperei tanto por isso que nem sei como reagir agora, fiz essa parte com muito carinho. Você é muito espcial pra mim. Você se tornou uma parte da minha vida, alguém que nunca quero me afastar, apenas me aproximar mais</p>
+                <p> Espero que tenha abrido e gostado de todos presentes, saiba que escolhi lembrando o quanto eu te amo e como você é extremamente imporante pra mim. feliz aniversário minha Alana Fernades Braga de Sá. minha noiva e familia</p>
+            </div>
+            <button id="abrir-video">Clique para uma surpresa</button>
+        </div>
+    </main>
+
+    <aside class="sidebar side-right">
+        <div class="glass-wrapper">
+            <img src="img/kuromi superior direita.gif" alt="Kuromi 3">
+        </div>
+        <div class="glass-wrapper">
+            <img src="img/kuromi inferior direita.gif" alt="Kuromi 4">
+        </div>
+    </aside>
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,232 +1,60 @@
-:root {
-    --purple: #9d4edd;
-    --dark: #0a0a0a; 
-    --magenta: #d400ff;
-    --bg-soft: rgba(30, 30, 30, 0.8); 
-}
-
-body {
-    margin: 0;
-    background-color: var(--dark);
-    background-image: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
-    font-family: 'Segoe UI', sans-serif;
-    color: white;
-    overflow-x: hidden;
-}
-
-/* --- SIDEBAR SUPERIOR (HEADER) --- */
-.sidebar-topo {
-    width: 100%;
-    height: 100px; /* Aumentado para dar mais destaque */
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 3px solid var(--purple);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 5px 25px rgba(157, 78, 221, 0.4);
-}
-
-.sidebar-topo p {
-    margin: 0;
-    color: var(--magenta);
-    font-weight: 800;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-size: 1.6rem; /* Fonte maior no topo */
-    text-shadow: 0 0 15px var(--magenta);
-}
-
-/* --- LAYOUT PRINCIPAL --- */
-.container-principal {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 100vh;
-    padding: 140px 5% 60px 5%; /* Aumentado o topo para não cobrir o conteúdo */
-}
-
-/* Sidebars Laterais Ampliadas */
-.sidebar {
-    width: 320px; /* Aumentado para 320px para caber as Kuromis maiores */
-    display: flex;
-    flex-direction: column;
-    gap: 50px; 
-    align-items: center;
-}
-
-/* Molduras Glassmorphism */
-.glass-wrapper {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(8px);
-    border: 2px solid rgba(157, 78, 221, 0.4);
-    border-radius: 30px;
-    padding: 25px; /* Mais respiro para a imagem */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.glass-wrapper:hover {
-    border-color: var(--magenta);
-    box-shadow: 0 0 25px var(--purple);
-    transform: translateY(-8px) scale(1.05);
-}
-
-.sidebar img {
-    width: 240px; /* Imagens maiores */
-    height: auto;
-    filter: drop-shadow(0 0 15px var(--purple));
-}
-
-/* --- CARD CENTRAL --- */
-.conteudo-central {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    padding: 0 30px;
-}
-
-.card-kuromi {
-    background: var(--bg-soft);
-    backdrop-filter: blur(15px);
-    max-width: 700px; /* Card um pouco mais largo */
-    padding: 60px;
-    border-radius: 50px;
-    border: 2px solid var(--purple);
-    box-shadow: 0 0 50px rgba(157, 78, 221, 0.2);
-    text-align: center;
-}
-
-h1 { 
-    color: var(--magenta); 
-    margin-bottom: 30px; 
-    font-size: 2.4rem; /* Fonte do título maior */
-    text-shadow: 0 0 15px rgba(212, 0, 255, 0.6);
-}
-
-.texto-container p {
-    line-height: 1.8;
-    font-size: 1.4rem; /* Texto principal bem legível */
-    color: #ffffff;
-}
-
-/* --- BOTÃO --- */
-#abrir-video {
-    background: var(--magenta);
-    color: white;
-    border: none;
-    padding: 22px 60px;
-    border-radius: 60px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 40px;
-    transition: 0.3s all;
-    box-shadow: 0 0 20px rgba(212, 0, 255, 0.5);
-}
-
-#abrir-video:hover {
-    background: var(--purple);
-    transform: translateY(-4px);
-    box-shadow: 0 0 30px rgba(157, 78, 221, 0.7);
-}
-
-/* --- OVERLAY VÍDEO (CORREÇÃO DO ACHATAMENTO) --- */
-#video-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.98);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.video-hide { display: none !important; }
-
-#meuVideo {
-    width: 90%;
-    max-width: 1000px;
-    aspect-ratio: 16 / 9; /* ESSENCIAL: Mantém a proporção e impede de achatar */
-    height: auto; 
-    border: 3px solid var(--purple);
-    border-radius: 20px;
-    box-shadow: 0 0 60px rgba(157, 78, 221, 0.5);
-    background: black;
-}
-
-#close-video {
-    position: absolute;
-    top: 30px; 
-    right: 40px;
-    background: var(--magenta);
-    color: white;
-    border: none;
-    width: 60px;
-    height: 60px;
-    font-size: 1.8rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: 0.3s;
-    z-index: 10001;
-}
-
-/* --- ADAPTAÇÃO PARA CELULAR --- */
+/* --- ADAPTAÇÃO PARA CELULAR CORRIGIDA --- */
 @media (max-width: 1024px) {
     .container-principal {
         flex-direction: column; 
-        padding: 120px 20px 50px 20px;
-        gap: 40px;
+        padding: 120px 15px 50px 15px; /* Reduzi um pouco o padding lateral */
+        gap: 30px;
     }
 
     .sidebar {
         width: 100%;
         flex-direction: row; 
+        flex-wrap: wrap; /* ESSENCIAL: Permite que as imagens desçam se não couberem */
         justify-content: center;
-        gap: 20px;
+        gap: 15px;
     }
 
+    /* Ajuste para as imagens não ficarem gigantes no celular */
     .sidebar img {
-        width: 160px; /* Ajustado para caber no mobile */
+        width: 120px; 
     }
 
-    .side-left { order: 1; }
-    .conteudo-central { order: 2; }
-    .side-right { order: 3; }
-}
+    /* Molduras menores no mobile para economizar espaço */
+    .glass-wrapper {
+        padding: 10px;
+        border-radius: 20px;
+    }
 
-#overlay-entrada {
-    position: fixed;
-    inset: 0;
-    background: var(--dark);
-    z-index: 10000; /* Fica acima de tudo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    /* Ordem dos elementos no Mobile */
+    .side-left { order: 1; }        /* Imagens da esquerda no topo */
+    .conteudo-central { order: 2; }   /* O card com texto no meio */
+    .side-right { order: 3; }       /* Imagens da direita no final */
 
-.card-entrada {
-    text-align: center;
-    padding: 40px;
-    border: 2px solid var(--purple);
-    border-radius: 30px;
-    background: rgba(20, 20, 20, 0.9);
-}
+    /* Ajuste do Card Central para telas pequenas */
+    .card-kuromi {
+        padding: 30px 20px;
+        width: 100%;
+        box-sizing: border-box; /* Garante que o padding não estoure a largura */
+    }
 
-#btn-entrar {
-    background: var(--magenta);
-    color: white;
-    border: none;
-    padding: 15px 40px;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    box-shadow: 0 0 20px var(--magenta);
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .texto-container p {
+        font-size: 1.1rem;
+    }
+
+    #abrir-video {
+        width: 100%;
+        padding: 18px;
+    }
+
+    /* Ajuste do botão de fechar vídeo no mobile */
+    #close-video {
+        top: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
 }

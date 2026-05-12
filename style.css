@@ -407,55 +407,32 @@ h1 {
 
 
 #overlay-entrada {
-
     position: fixed;
-
     inset: 0;
-
     background: var(--dark);
-
     z-index: 10000; /* Fica acima de tudo */
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
 }
-
-
 
 .card-entrada {
-
     text-align: center;
-
     padding: 40px;
-
     border: 2px solid var(--purple);
-
     border-radius: 30px;
-
     background: rgba(20, 20, 20, 0.9);
-
 }
 
-
-
 #btn-entrar {
-
     background: var(--magenta);
-
     color: white;
-
     border: none;
-
     padding: 15px 40px;
-
     border-radius: 50px;
-
     font-size: 1.2rem;
-
     cursor: pointer;
+    box-shadow: 0 0 20px var(--magenta);
+}
 
  
